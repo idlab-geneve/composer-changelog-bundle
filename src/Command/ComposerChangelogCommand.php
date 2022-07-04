@@ -31,8 +31,10 @@ class ComposerChangelogCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $format = '';
-        if (\in_array($this->format, ['md', 'json', 'json-pretty'])) {
+        if (\in_array($this->format, ['md', 'json'])) {
             $format = '--'.$this->format;
+        } elseif ('json-pretty' === $this->format) {
+            $format = '--json --pretty';
         }
         $io = new SymfonyStyle($input, $output);
         $cmd = 'git log --follow --pretty=\'format:%H||%ad||%s\' -- composer.lock';

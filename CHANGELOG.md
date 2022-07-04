@@ -1,5 +1,9 @@
 # Changelog
 
+[0.0.4]
+
+Fix JSON pretty output
+
 [0.0.3]
 
 Remove `output_file` configuration
