@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Idlab Composer Changelog Generator.
+ *
+ * (c) Idlab - Michael Vetterli (michael@idlab.ch)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Idlab\ComposerChangelogBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -10,7 +19,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('idlab_composer_changelog');
-        $rootNode    = $treeBuilder->getRootNode();
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()

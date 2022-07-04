@@ -2,7 +2,7 @@
     "name": "idlab/composer-changelog-bundle",
     "description": "Composer changelog generator",
     "type": "symfony-bundle",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,8 @@
         "davidrjonas/composer-lock-diff": "^1.7"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^6.1"
+        "symfony/phpunit-bridge": "^6.1",
+        "friendsofphp/php-cs-fixer": "^3.8"
     },
     "autoload": {
         "psr-4": {
