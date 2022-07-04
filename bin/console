@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+use \Symfony\Component\Console\Application;
+use \Idlab\ComposerChangelogBundle\Command\ComposerChangelogCommand;
+require_once dirname(__DIR__).'/vendor/autoload.php';
+
+// Create the Application
+$application = new Application();
+$application->add(new ComposerChangelogCommand());
+
+// Run it
+$application->run();
