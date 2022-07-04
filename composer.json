@@ -19,7 +19,8 @@
         "davidrjonas/composer-lock-diff": "^1.7"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^6.1"
+        "symfony/phpunit-bridge": "^6.1",
+        "friendsofphp/php-cs-fixer": "^3.8"
     },
     "autoload": {
         "psr-4": {

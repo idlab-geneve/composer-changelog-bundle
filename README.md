@@ -4,6 +4,8 @@ This bundle helps you generate a Changelog of the dependencies you have been ins
 This helps the developers keep track of important changes in a human readable way.
 The generation always generathe the whole history, so it can be run manualy or in a CI whenever you feel the need.
 
+The command is an intergration of the great [composer-lock-diff](https://github.com/davidrjonas/composer-lock-diff) by [davidrjonas](https://github.com/davidrjonas)
+
 Installation
 ============
 
@@ -52,6 +54,19 @@ return [
 $ php bin/console idlab:composer-changelog
 ```
 
+Will generate someting like this example :
+
+[...]
+
+| Dev Changes               | From | To      | Compare |
+|---------------------------|------|---------|---------|
+| composer/pcre             | NEW  | 3.0.0   |         |
+| composer/semver           | NEW  | 3.3.2   |         |
+| composer/xdebug-handler   | NEW  | 3.0.3   |         |
+| doctrine/annotations      | NEW  | 1.13.3  |         |
+
+[...]
+
 You couls also redirect the output to a file you may then commit with your application.
 
 ```console
@@ -61,3 +76,12 @@ $ php bin/console idlab:composer-changelog > COMPOSER-CHANGELOG.md
 ## Configuration
 
 @TODO implement the configuration in the Command :-)
+
+## Contribute
+
+Please always run CS fixer before sumbitting a merge request (PHP CS Fixer lives in the `./vendors` directory)
+
+```console
+$ php ./vendor/bin/php-cs-fixer fix
+```
+

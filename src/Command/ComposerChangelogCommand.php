@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Idlab Composer Changelog Generator.
+ *
+ * (c) Idlab - Michael Vetterli (michael@idlab.ch)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Idlab\ComposerChangelogBundle\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -31,7 +40,7 @@ class ComposerChangelogCommand extends Command
         $previousHash = null;
         $previousMessage = null;
         foreach ($output as $line) {
-            [$hash, $date, $message] = explode("||", $line);
+            [$hash, $date, $message] = explode('||', $line);
             $changes = [];
             if ($previousHash && $previousMessage) {
                 $cmd = sprintf('php ./vendor/bin/composer-lock-diff --md --from %s --to %s', $hash, $previousHash);
@@ -48,7 +57,9 @@ class ComposerChangelogCommand extends Command
             $previousHash = $hash;
         }
 
-        $io->writeln(sprintf('This file was generated on %s by running command `php bin/console idlab:composer-changelog`', date('Y-m-d H:i:s')));
+        $io->writeln(sprintf('This file was generated on %s by running command `php bin/console idlab:composer-changelog`'.\PHP_EOL, date('Y-m-d H:i:s')));
+        $io->writeln('The command is provided by [idlab/composer-changelog-bundle](https://github.com/idlab-geneve/composer-changelog-bundle) which is an intergration of the great [composer-lock-diff](https://github.com/davidrjonas/composer-lock-diff) by [davidrjonas](https://github.com/davidrjonas)');
+
         return Command::SUCCESS;
     }
 }
