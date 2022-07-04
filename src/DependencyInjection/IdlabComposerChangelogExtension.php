@@ -28,7 +28,6 @@ class IdlabComposerChangelogExtension extends Extension
 
         $definition = $container->getDefinition('idlab_composer_changelog.composer_changelog_command');
         $definition->setArgument(0, $config['format']);
-        $definition->setArgument(1, $config['output_file']);
     }
 
     public function getAlias(): string

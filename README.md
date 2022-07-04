@@ -75,8 +75,17 @@ $ php bin/console idlab:composer-changelog > COMPOSER-CHANGELOG.md
 
 ## Configuration
 
-@TODO implement the configuration in the Command :-)
+The output format and destination can be defined in the configuration file. 
+If the file has not yet been generated, create a new `config/packages/idlab_composer_changelog.yaml` file.
+The defaulf values are
 
+```yaml
+idlab_composer_changelog:
+    # Formats the output, can be "text", "md", "json", "json-pretty"
+    format: md
+```
+
+NB: to see the configuration reference, run `$ php bin/console config:dump idlab_composer_changelog`
 ## Contribute
 
 Please always run CS fixer before sumbitting a merge request (PHP CS Fixer lives in the `./vendors` directory)

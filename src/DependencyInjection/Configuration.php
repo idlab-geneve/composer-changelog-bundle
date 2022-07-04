@@ -23,15 +23,14 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('format')
-                ->info('formats the output, can be "text", "md", "json", "json-pretty"')
-                ->validate()
-                    ->ifNotInArray(['md', 'text', 'json', 'json-pretty'])
-                    ->thenInvalid('Invalid database driver %s')
+                ->scalarNode('format')
+                    ->info('Formats the output, can be "text", "md", "json", "json-pretty"')
+                    ->validate()
+                        ->ifNotInArray(['md', 'text', 'json', 'json-pretty'])
+                        ->thenInvalid('Invalid database driver %s')
+                    ->end()
+                    ->defaultValue('md')
                 ->end()
-                ->defaultValue('md')
-                ->end()
-            ->scalarNode('output_file')->defaultNull()->end()
             ->end()
         ;
 

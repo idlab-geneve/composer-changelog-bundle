@@ -1,5 +1,11 @@
 # Changelog
 
+[0.0.3]
+
+Remove `output_file` configuration
+Implement `format` configuration
+Update configuration documentation in README.md
+
 [0.0.2]
 
 Add CS fixer dependency and configuration

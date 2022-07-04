@@ -23,13 +23,17 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class ComposerChangelogCommand extends Command
 {
-    public function __construct(private ?string $format = null, private ?string $output_file = null)
+    public function __construct(private ?string $format = 'md')
     {
         parent::__construct();
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $format = '';
+        if (\in_array($this->format, ['md', 'json', 'json-pretty'])) {
+            $format = '--'.$this->format;
+        }
         $io = new SymfonyStyle($input, $output);
         $cmd = 'git log --follow --pretty=\'format:%H||%ad||%s\' -- composer.lock';
 
@@ -43,10 +47,10 @@ class ComposerChangelogCommand extends Command
             [$hash, $date, $message] = explode('||', $line);
             $changes = [];
             if ($previousHash && $previousMessage) {
-                $cmd = sprintf('php ./vendor/bin/composer-lock-diff --md --from %s --to %s', $hash, $previousHash);
+                $cmd = sprintf('php ./vendor/bin/composer-lock-diff %s --from %s --to %s', $format, $hash, $previousHash);
             } else {
                 $previousMessage = 'Uncommited composer.lock. Once commited, the commit message will apear here :-)';
-                $cmd = sprintf('php ./vendor/bin/composer-lock-diff --md --from %s', $hash);
+                $cmd = sprintf('php ./vendor/bin/composer-lock-diff %s --from %s', $format, $hash);
             }
             $res = exec($cmd, $changes);
             if ($changes) {
