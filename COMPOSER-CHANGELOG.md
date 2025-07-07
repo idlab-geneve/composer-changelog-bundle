@@ -1,5 +1,60 @@
 # Composer dependecies changelog
 
+### 2022-07-04 14:14 - [0.0.5] - Update for Symfony 7 compatibility
+
+| Production Changes                 | From    | To      | Compare                                                                              |
+|------------------------------------|---------|---------|--------------------------------------------------------------------------------------|
+| davidrjonas/composer-lock-diff     | 1.7.0   | 1.7.1   | [...](https://github.com/davidrjonas/composer-lock-diff/compare/1.7.0...1.7.1)       |
+| psr/log                            | 3.0.0   | 3.0.2   | [...](https://github.com/php-fig/log/compare/3.0.0...3.0.2)                          |
+| symfony/config                     | v6.1.0  | v6.4.22 | [...](https://github.com/symfony/config/compare/v6.1.0...v6.4.22)                    |
+| symfony/console                    | v6.1.2  | v6.4.23 | [...](https://github.com/symfony/console/compare/v6.1.2...v6.4.23)                   |
+| symfony/dependency-injection       | v6.1.2  | v6.4.23 | [...](https://github.com/symfony/dependency-injection/compare/v6.1.2...v6.4.23)      |
+| symfony/deprecation-contracts      | v3.1.1  | v3.6.0  | [...](https://github.com/symfony/deprecation-contracts/compare/v3.1.1...v3.6.0)      |
+| symfony/error-handler              | v6.1.0  | v7.3.1  | [...](https://github.com/symfony/error-handler/compare/v6.1.0...v7.3.1)              |
+| symfony/event-dispatcher           | v6.1.0  | v7.3.0  | [...](https://github.com/symfony/event-dispatcher/compare/v6.1.0...v7.3.0)           |
+| symfony/event-dispatcher-contracts | v3.1.1  | v3.6.0  | [...](https://github.com/symfony/event-dispatcher-contracts/compare/v3.1.1...v3.6.0) |
+| symfony/filesystem                 | v6.1.0  | v7.3.0  | [...](https://github.com/symfony/filesystem/compare/v6.1.0...v7.3.0)                 |
+| symfony/http-foundation            | v6.1.2  | v7.3.1  | [...](https://github.com/symfony/http-foundation/compare/v6.1.2...v7.3.1)            |
+| symfony/http-kernel                | v6.1.2  | v6.4.23 | [...](https://github.com/symfony/http-kernel/compare/v6.1.2...v6.4.23)               |
+| symfony/polyfill-ctype             | v1.26.0 | v1.32.0 | [...](https://github.com/symfony/polyfill-ctype/compare/v1.26.0...v1.32.0)           |
+| symfony/polyfill-intl-grapheme     | v1.26.0 | v1.32.0 | [...](https://github.com/symfony/polyfill-intl-grapheme/compare/v1.26.0...v1.32.0)   |
+| symfony/polyfill-intl-normalizer   | v1.26.0 | v1.32.0 | [...](https://github.com/symfony/polyfill-intl-normalizer/compare/v1.26.0...v1.32.0) |
+| symfony/polyfill-mbstring          | v1.26.0 | v1.32.0 | [...](https://github.com/symfony/polyfill-mbstring/compare/v1.26.0...v1.32.0)        |
+| symfony/service-contracts          | v3.1.1  | v3.6.0  | [...](https://github.com/symfony/service-contracts/compare/v3.1.1...v3.6.0)          |
+| symfony/string                     | v6.1.2  | v7.3.0  | [...](https://github.com/symfony/string/compare/v6.1.2...v7.3.0)                     |
+| symfony/var-dumper                 | v6.1.0  | v7.3.1  | [...](https://github.com/symfony/var-dumper/compare/v6.1.0...v7.3.1)                 |
+| symfony/polyfill-php83             | NEW     | v1.32.0 |                                                                                      |
+| symfony/var-exporter               | NEW     | v7.3.0  |                                                                                      |
+
+| Dev Changes               | From    | To      | Compare                                                                      |
+|---------------------------|---------|---------|------------------------------------------------------------------------------|
+| composer/pcre             | 3.0.0   | 3.3.2   | [...](https://github.com/composer/pcre/compare/3.0.0...3.3.2)                |
+| composer/semver           | 3.3.2   | 3.4.3   | [...](https://github.com/composer/semver/compare/3.3.2...3.4.3)              |
+| composer/xdebug-handler   | 3.0.3   | 3.0.5   | [...](https://github.com/composer/xdebug-handler/compare/3.0.3...3.0.5)      |
+| doctrine/annotations      | 1.13.3  | REMOVED |                                                                              |
+| doctrine/lexer            | 1.2.3   | REMOVED |                                                                              |
+| friendsofphp/php-cs-fixer | v3.8.0  | v3.80.0 | [...](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/compare/v3.8.0...v3.80.0) |
+| php-cs-fixer/diff         | v2.0.2  | REMOVED |                                                                              |
+| psr/cache                 | 3.0.0   | REMOVED |                                                                              |
+| symfony/finder            | v6.1.0  | v7.3.0  | [...](https://github.com/symfony/finder/compare/v6.1.0...v7.3.0)             |
+| symfony/options-resolver  | v6.1.0  | v7.3.0  | [...](https://github.com/symfony/options-resolver/compare/v6.1.0...v7.3.0)   |
+| symfony/phpunit-bridge    | v6.1.2  | v6.4.23 | [...](https://github.com/symfony/phpunit-bridge/compare/v6.1.2...v6.4.23)    |
+| symfony/polyfill-php80    | v1.26.0 | v1.32.0 | [...](https://github.com/symfony/polyfill-php80/compare/v1.26.0...v1.32.0)   |
+| symfony/polyfill-php81    | v1.26.0 | v1.32.0 | [...](https://github.com/symfony/polyfill-php81/compare/v1.26.0...v1.32.0)   |
+| symfony/process           | v6.1.0  | v7.3.0  | [...](https://github.com/symfony/process/compare/v6.1.0...v7.3.0)            |
+| symfony/stopwatch         | v6.1.0  | v7.3.0  | [...](https://github.com/symfony/stopwatch/compare/v6.1.0...v7.3.0)          |
+| clue/ndjson-react         | NEW     | v1.3.0  |                                                                              |
+| evenement/evenement       | NEW     | v3.0.2  |                                                                              |
+| fidry/cpu-core-counter    | NEW     | 1.2.0   |                                                                              |
+| react/cache               | NEW     | v1.2.0  |                                                                              |
+| react/child-process       | NEW     | v0.6.6  |                                                                              |
+| react/dns                 | NEW     | v1.13.0 |                                                                              |
+| react/event-loop          | NEW     | v1.5.0  |                                                                              |
+| react/promise             | NEW     | v3.2.0  |                                                                              |
+| react/socket              | NEW     | v1.16.0 |                                                                              |
+| react/stream              | NEW     | v1.4.0  |                                                                              |
+| sebastian/diff            | NEW     | 7.0.0   |                                                                              |
+
 ### 2022-07-04 14:11 - require friendsofphp/php-cs-fixer --dev
 
 | Dev Changes               | From | To      | Compare |
@@ -19,6 +74,6 @@
 | symfony/process           | NEW  | v6.1.0  |         |
 | symfony/stopwatch         | NEW  | v6.1.0  |         |
 
-This file was generated on 2022-07-04 14:37:22 by running command `php bin/console idlab:composer-changelog`
+This file was generated on 2025-07-07 15:33:18 by running command `php bin/console idlab:composer-changelog`
 
 The command is provided by [idlab/composer-changelog-bundle](https://github.com/idlab-geneve/composer-changelog-bundle) which is an intergration of the great [composer-lock-diff](https://github.com/davidrjonas/composer-lock-diff) by [davidrjonas](https://github.com/davidrjonas)
