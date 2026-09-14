@@ -14,7 +14,6 @@ class ComposerChangelogCommandTest extends TestCase
         $command = new ComposerChangelogCommand();
         $tester = new CommandTester($command);
         $tester->execute([]);
-        var_dump($tester->getOutput());
         $tester->assertCommandIsSuccessful();
 //
 //        $command = $application->find('idlab:composer-changelog');
