@@ -7,7 +7,7 @@ require_once dirname(__DIR__).'/vendor/autoload.php';
 
 // Create the Application
 $application = new Application();
-$application->add(new ComposerChangelogCommand());
+$application->addCommand(new ComposerChangelogCommand());
 
 // Run it
 $application->run();

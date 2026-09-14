@@ -49,10 +49,10 @@ class ComposerChangelogCommand extends Command
             [$hash, $date, $message] = explode('||', $line);
             $changes = [];
             if ($previousHash && $previousMessage) {
-                $cmd = sprintf('php ./vendor/bin/composer-lock-diff %s --from %s --to %s', $format, $hash, $previousHash);
+                $cmd = \sprintf('php ./vendor/bin/composer-lock-diff %s --from %s --to %s', $format, $hash, $previousHash);
             } else {
                 $previousMessage = 'Uncommited composer.lock. Once commited, the commit message will apear here :-)';
-                $cmd = sprintf('php ./vendor/bin/composer-lock-diff %s --from %s', $format, $hash);
+                $cmd = \sprintf('php ./vendor/bin/composer-lock-diff %s --from %s', $format, $hash);
             }
             $res = exec($cmd, $changes);
             if ($changes) {
@@ -63,7 +63,7 @@ class ComposerChangelogCommand extends Command
             $previousHash = $hash;
         }
 
-        $io->writeln(sprintf('This file was generated on %s by running command `php bin/console idlab:composer-changelog`'.\PHP_EOL, date('Y-m-d H:i:s')));
+        $io->writeln(\sprintf('This file was generated on %s by running command `php bin/console idlab:composer-changelog`'.\PHP_EOL, date('Y-m-d H:i:s')));
         $io->writeln('The command is provided by [idlab/composer-changelog-bundle](https://github.com/idlab-geneve/composer-changelog-bundle) which is an intergration of the great [composer-lock-diff](https://github.com/davidrjonas/composer-lock-diff) by [davidrjonas](https://github.com/davidrjonas)');
 
         return Command::SUCCESS;

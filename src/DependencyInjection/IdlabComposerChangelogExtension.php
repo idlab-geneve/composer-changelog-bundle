@@ -11,17 +11,20 @@
 
 namespace Idlab\ComposerChangelogBundle\DependencyInjection;
 
-use Symfony\Component\Config\FileLocator;
+use Idlab\ComposerChangelogBundle\Command\ComposerChangelogCommand;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 
 class IdlabComposerChangelogExtension extends Extension
 {
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
+        $container
+            ->register('idlab_composer_changelog.composer_changelog_command', ComposerChangelogCommand::class)
+            ->setPublic(true)
+            ->setAutoconfigured(true)
+        ;
+        $container->setAlias(ComposerChangelogCommand::class, 'idlab_composer_changelog.composer_changelog_command');
 
         $configuration = $this->getConfiguration($configs, $container);
         $config = $this->processConfiguration($configuration, $configs);
